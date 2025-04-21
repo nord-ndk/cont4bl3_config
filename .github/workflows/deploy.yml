@@ -20,7 +20,7 @@
           run: docker compose -f docker-compose.yml down
 
         - name: Eliminar imagenes residuales
-          run: docker rmi -f $(docker images -q)
+          run: docker image prune -af
 
         - name: Levantar servicios con Docker Compose
           run: docker compose -f docker-compose.yml up -d --build
